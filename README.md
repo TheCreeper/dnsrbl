@@ -1,7 +1,7 @@
 # dnsbl
 
 dnsbl is a library written to help you check if an address is listed on with
-an dnsrbl. You can either specify a dnsrbl to query or use the builtin list.
+a dnsrbl. You can either specify a dnsrbl to query or use the builtin list.
 This package attempts to be as lightweight as possible and provide basic
 capabilities to query dnsrbl servers.
 
