@@ -1,5 +1,5 @@
 // Package dnsbl performs rbl lookups to either the builtin or specified
-// servers, This package attempts to be as lightweight as possible and provide
+// servers. This package attempts to be as lightweight as possible and provide
 // basic capabilities to query dnsrbl servers.
 package dnsbl
 
