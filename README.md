@@ -22,7 +22,7 @@ if r.Listed {
 
 Query the builtin list of dnsrbl servers.
 ```Go
-results, err := dnsrbl.QueryBuiltin("zen.spamhaus.org", "google.com")
+results, err := dnsrbl.QueryBuiltin("google.com")
 if err != nil {
 	log.Fatal(err)
 }
