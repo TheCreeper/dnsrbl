@@ -1,19 +1,35 @@
-# fdm
+# dnsbl
 
-fdm is a tool to help you manage your source fastdl server and keep it up to 
-date with custom maps, materials, models, and sounds.
+dnsbl is a library written to help you check if an address is listed on with
+an dnsrbl. You can either specify a dnsrbl to query or use the builtin list.
+This package attempts to be as lightweight as possible and provide basic
+capabilities to query dnsrbl servers.
 
-## Usage
 
-Simply compile using the [go toolchain](https://golang.org/dl/) then specify
-the game assets directory and the fastdl directory.
+## Examples
 
-Build the fastdl directory.
+Query a single dnsrbl server.
+```Go
+r, err := dnsrbl.Query("zen.spamhaus.org", "google.com")
+if err != nil {
+	log.Fatal(err)
+}
+
+if r.Listed {
+	// Do something.
+}
 ```
-fdm -in "~/winempires/empires/custom/content" -out "~/fastdl"
-```
 
-Build the fastdl directory and cleanup cruft.
-```
-fdm -cleanup -in "~/winempires/empires/custom/content" -out "~/fastdl"
+Query the builtin list of dnsrbl servers.
+```Go
+results, err := dnsrbl.QueryBuiltin("zen.spamhaus.org", "google.com")
+if err != nil {
+	log.Fatal(err)
+}
+
+for _, result := range results {
+	if result.Listed {
+		// Do something.
+	}
+}
 ```
